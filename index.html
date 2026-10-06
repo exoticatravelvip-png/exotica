@@ -1,1 +1,1003 @@
 
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exótica Tours VIP | Luxury Destination Within Your Reach</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: {
+                            DEFAULT: '#0B192C',
+                            light: '#1E2E45',
+                            dark: '#050D18'
+                        },
+                        gold: {
+                            DEFAULT: '#CBA135',
+                            light: '#E6C068',
+                            dark: '#A37E20',
+                            glow: 'rgba(203, 161, 53, 0.25)'
+                        },
+                        softgray: '#6C7A89',
+                        frostwhite: '#FBFBFB'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Luxury Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050D18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBA135;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E6C068;
+        }
+
+        /* Gold Gradient Borders & Text */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0CA 0%, #E6C068 40%, #CBA135 70%, #9B751A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            border: 1px solid rgba(203, 161, 53, 0.4);
+            box-shadow: 0 0 15px rgba(203, 161, 53, 0.15);
+        }
+
+        .gold-border-glow:hover {
+            border-color: rgba(230, 192, 104, 0.8);
+            box-shadow: 0 0 25px rgba(203, 161, 53, 0.35);
+        }
+
+        .glass-panel {
+            background: rgba(11, 25, 44, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(203, 161, 53, 0.2);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(30, 46, 69, 0.6) 0%, rgba(11, 25, 44, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(203, 161, 53, 0.18);
+        }
+
+        /* Custom Hover Zoom Animation */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Subtle Gold Shimmer Effect */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-btn {
+            background: linear-gradient(90deg, #CBA135 0%, #E6C068 50%, #CBA135 100%);
+            background-size: 200% 100%;
+            transition: all 0.4s ease;
+        }
+        .shimmer-btn:hover {
+            background-position: 100% 0;
+            box-shadow: 0 0 20px rgba(230, 192, 104, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-midnight text-frostwhite font-sans antialiased selection:bg-gold selection:text-midnight overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-gold/20 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchTab('home'); return false;" class="flex items-center gap-3 group">
+                <!-- SVG Emblem derived from brand guidelines -->
+                <svg class="w-12 h-12 text-gold transition-transform duration-500 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Crescent Wave Lines -->
+                    <circle cx="100" cy="100" r="90" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <path d="M 30,100 C 50,160 150,170 180,100 C 140,150 60,130 30,100 Z" fill="url(#goldGrad)" opacity="0.8"/>
+                    <!-- Airplane Trail Heart -->
+                    <path d="M 85,90 C 85,82 95,80 100,87 C 105,80 115,82 115,90 C 115,98 100,108 100,108 C 100,108 85,98 85,90 Z" stroke="#E6C068" stroke-width="1.5" stroke-dasharray="2 2" fill="none"/>
+                    <!-- Airplane -->
+                    <path d="M 125,75 L 135,72 L 132,79 L 138,82 L 135,84 L 130,81 L 126,86 L 124,85 L 126,80 Z" fill="#E6C068"/>
+                    <!-- Gradients -->
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFF0CA"/>
+                            <stop offset="50%" stop-color="#E6C068"/>
+                            <stop offset="100%" stop-color="#CBA135"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-script text-2xl sm:text-3xl text-gold leading-none tracking-wide">Exótica</span>
+                    <span class="font-serif text-xs tracking-[0.3em] text-frostwhite uppercase font-light">Tours VIP • Dubai</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium tracking-widest uppercase">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn active text-gold transition-colors duration-300 hover:text-gold relative py-1">Inicio</button>
+                <button onclick="switchTab('destinations')" id="nav-destinations" class="nav-btn text-frostwhite/80 transition-colors duration-300 hover:text-gold relative py-1">Destinos & Experiencias</button>
+                <button onclick="switchTab('accommodations')" id="nav-accommodations" class="nav-btn text-frostwhite/80 transition-colors duration-300 hover:text-gold relative py-1">Alojamiento VIP</button>
+                <button onclick="switchTab('blog')" id="nav-blog" class="nav-btn text-frostwhite/80 transition-colors duration-300 hover:text-gold relative py-1">Blog Insights</button>
+                <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn text-frostwhite/80 transition-colors duration-300 hover:text-gold relative py-1">Contacto</button>
+            </nav>
+
+            <!-- Header Controls & CTA -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <!-- Currency / Language Selector -->
+                <div class="flex items-center space-x-2 text-xs text-softgray border-r border-gold/20 pr-4">
+                    <span class="text-gold font-semibold">USD ($)</span>
+                    <span>|</span>
+                    <button class="hover:text-frostwhite transition-colors">ES</button>
+                    <span>/</span>
+                    <button class="hover:text-frostwhite transition-colors">EN</button>
+                </div>
+                
+                <button onclick="openBookingModal('Concierge Directo')" class="shimmer-btn text-midnight font-semibold px-5 py-2.5 rounded-full text-xs uppercase tracking-widest flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-crown text-xs"></i>
+                    <span>Reservar Concierge</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gold text-2xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-gold/20 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-sm tracking-wider uppercase font-medium">
+                <button onclick="switchTab('home'); toggleMobileMenu()" class="text-left text-gold py-2 border-b border-gold/10">Inicio</button>
+                <button onclick="switchTab('destinations'); toggleMobileMenu()" class="text-left text-frostwhite hover:text-gold py-2 border-b border-gold/10">Destinos & Experiencias</button>
+                <button onclick="switchTab('accommodations'); toggleMobileMenu()" class="text-left text-frostwhite hover:text-gold py-2 border-b border-gold/10">Alojamiento VIP</button>
+                <button onclick="switchTab('blog'); toggleMobileMenu()" class="text-left text-frostwhite hover:text-gold py-2 border-b border-gold/10">Blog VIP</button>
+                <button onclick="switchTab('contact'); toggleMobileMenu()" class="text-left text-frostwhite hover:text-gold py-2 border-b border-gold/10">Contacto & Concierge</button>
+                
+                <div class="pt-4 flex items-center justify-between">
+                    <span class="text-xs text-gold">USD ($) / ES</span>
+                    <button onclick="openBookingModal('Concierge Directo'); toggleMobileMenu()" class="shimmer-btn text-midnight font-bold px-4 py-2 rounded-full text-xs uppercase tracking-widest">
+                        Reservar Concierge
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER FOR ALL 5 PAGES -->
+    <main class="pt-24 min-h-screen">
+
+        <div id="page-home" class="page-section">
+            
+            <!-- Hero Banner with Video/Image Layer -->
+            <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16">
+                <!-- Background Image Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80" alt="Dubai Luxury Skyline" class="w-full h-full object-cover object-center filter brightness-[0.4] contrast-125 scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-midnight/40 to-midnight"></div>
+                </div>
+
+                <div class="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-midnight/80 backdrop-blur-md mb-6 animate-pulse">
+                        <i class="fa-solid fa-gem text-gold text-xs"></i>
+                        <span class="font-serif text-xs sm:text-sm text-gold tracking-widest uppercase">Experiencias Ultra Exclusivas en Emiratos Árabes</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-tight mb-4">
+                        El Lujo Sobrenatural <br>
+                        <span class="font-script text-gold font-normal text-5xl sm:text-7xl md:text-8xl lg:text-9xl block -mt-2 sm:-mt-4">a su Alcance</span>
+                    </h1>
+
+                    <p class="font-sans text-sm sm:text-lg text-frostwhite/80 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                        Diseñamos travesías privadas sin precedentes en Dubái, Abu Dhabi y los destinos más deslumbrantes del planeta. Jet privados, superyates y villas palaciegas.
+                    </p>
+
+                    <!-- VIP Booking Search Bar Widget -->
+                    <div class="glass-panel rounded-2xl p-4 sm:p-6 shadow-2xl max-w-4xl mx-auto border border-gold/30">
+                        <form onsubmit="handleQuickSearch(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4 text-left">
+                            <div class="p-2 border-b md:border-b-0 md:border-r border-gold/20">
+                                <label class="block font-serif text-xs text-gold uppercase tracking-wider mb-1"><i class="fa-solid fa-compass mr-1"></i> Experiencia</label>
+                                <select id="search-exp" class="w-full bg-transparent text-sm text-frostwhite focus:outline-none cursor-pointer">
+                                    <option value="all" class="bg-midnight text-frostwhite">Todas las Experiencias</option>
+                                    <option value="jet" class="bg-midnight text-frostwhite">Private Jet & Helicóptero</option>
+                                    <option value="yacht" class="bg-midnight text-frostwhite">Superyacht Charter</option>
+                                    <option value="penthouse" class="bg-midnight text-frostwhite">Royal Penthouses & Villas</option>
+                                    <option value="desert" class="bg-midnight text-frostwhite">Santuario en el Desierto VIP</option>
+                                </select>
+                            </div>
+                            
+                            <div class="p-2 border-b md:border-b-0 md:border-r border-gold/20">
+                                <label class="block font-serif text-xs text-gold uppercase tracking-wider mb-1"><i class="fa-solid fa-calendar-days mr-1"></i> Fechas Estimadas</label>
+                                <input type="text" placeholder="Seleccione Fechas" class="w-full bg-transparent text-sm text-frostwhite placeholder-frostwhite/50 focus:outline-none" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            </div>
+
+                            <div class="p-2 border-b md:border-b-0 md:border-r border-gold/20">
+                                <label class="block font-serif text-xs text-gold uppercase tracking-wider mb-1"><i class="fa-solid fa-user-group mr-1"></i> Pasajeros VIP</label>
+                                <select class="w-full bg-transparent text-sm text-frostwhite focus:outline-none cursor-pointer">
+                                    <option class="bg-midnight">1 - 2 Viajeros VIP</option>
+                                    <option class="bg-midnight">3 - 6 Grupo Privado</option>
+                                    <option class="bg-midnight"> Delegation / Royal Party (7+)</option>
+                                </select>
+                            </div>
+
+                            <div class="flex items-center">
+                                <button type="submit" class="w-full h-full min-h-[50px] shimmer-btn text-midnight font-bold rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span>Buscar Travesía</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand Philosophy & Story Section -->
+            <section class="py-24 bg-midnight-dark relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div class="relative">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden gold-border-glow img-zoom-container relative">
+                                <img src="https://images.unsplash.com/photo-1546412414-8035e1776c9a?auto=format&fit=crop&w=1200&q=80" alt="Exótica Luxury Experience" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 p-6 glass-panel rounded-xl">
+                                    <p class="font-script text-3xl text-gold mb-1">Atención Concierge 24/7</p>
+                                    <p class="text-xs text-frostwhite/80 font-light">Acceso ilimitado a reservaciones exclusivas en los mejores clubs y restaurantes Michelin de Dubái.</p>
+                                </div>
+                            </div>
+                            <!-- Floating Badge -->
+                            <div class="absolute -top-6 -right-6 bg-gradient-to-br from-gold-light to-gold text-midnight rounded-full w-28 h-28 flex flex-col items-center justify-center p-2 text-center shadow-2xl font-serif">
+                                <span class="text-2xl font-bold leading-none">100%</span>
+                                <span class="text-[10px] uppercase font-semibold tracking-wider">A Medida</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase block mb-2">Filosofía Exótica Tours VIP</span>
+                            <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight mb-6">
+                                Diseñando Memorias Inestimables <br>
+                                <span class="font-script text-gold text-4xl sm:text-6xl">en el Corazón de Dubái</span>
+                            </h2>
+                            <p class="text-frostwhite/70 text-sm leading-relaxed mb-6 font-light">
+                                En Exótica Tours VIP transformamos el viaje tradicional en un arte sublime. Entendemos que el verdadero lujo reside en los detalles imperceptibles, el tiempo optimizado y el acceso indiscutible a lugares veto para el público general.
+                            </p>
+                            <p class="text-frostwhite/70 text-sm leading-relaxed mb-8 font-light">
+                                Desde el momento en que desembarca de su jet privado en la terminal VIP del Aeropuerto Internacional de Dubái, nuestro equipo de Butler & Concierge personal gestionará cada segundo de su estadía.
+                            </p>
+
+                            <!-- Key Pillars Grid -->
+                            <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gold/20">
+                                <div>
+                                    <h4 class="font-serif text-lg text-gold mb-1"><i class="fa-solid fa-plane-departure mr-2 text-xs"></i> Flota Privada</h4>
+                                    <p class="text-xs text-softgray">Helicópteros y jets ejecutivos listos para su itinerario.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-lg text-gold mb-1"><i class="fa-solid fa-shield-halved mr-2 text-xs"></i> Privacidad Total</h4>
+                                    <p class="text-xs text-softgray">Protocolos de confidencialidad y escoltas de alta seguridad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured VIP Collections Carousel / Cards -->
+            <section class="py-24 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                        <div>
+                            <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase">Experiencias Destacadas</span>
+                            <h2 class="font-serif text-3xl sm:text-5xl font-normal mt-2">Colecciones Privadas de Temporada</h2>
+                        </div>
+                        <button onclick="switchTab('destinations')" class="mt-4 md:mt-0 text-gold hover:text-gold-light font-serif text-sm tracking-widest uppercase flex items-center gap-2 group">
+                            <span>Ver Todo el Catálogo VIP</span>
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="glass-card rounded-2xl overflow-hidden gold-border-glow transition-all duration-500 group">
+                            <div class="aspect-[16/10] img-zoom-container relative">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" alt="Superyacht Charter" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-midnight/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold border border-gold/30">
+                                    Desde $15,000 / día
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[10px] tracking-widest uppercase text-gold font-medium">Dubái Marina & The Palm</span>
+                                <h3 class="font-serif text-2xl text-frostwhite mt-1 mb-3 group-hover:text-gold transition-colors">Mega Yate Privado por la Costa Arábiga</h3>
+                                <p class="text-xs text-frostwhite/70 font-light line-clamp-2 mb-6">Navegue por el icónico Atlantis The Royal con chef privado galardonado con estrellas Michelin, DJ a bordo y tripulación exclusiva.</p>
+                                <button onclick="openBookingModal('Mega Yate Privado')" class="w-full py-3 border border-gold/40 rounded-xl text-xs uppercase tracking-widest text-gold hover:bg-gold hover:text-midnight font-semibold transition-all">
+                                    Solicitar Disponibilidad
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-card rounded-2xl overflow-hidden gold-border-glow transition-all duration-500 group">
+                            <div class="aspect-[16/10] img-zoom-container relative">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80" alt="Desert Luxury Royal Camp" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-midnight/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold border border-gold/30">
+                                    Desde $8,500 / noche
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[10px] tracking-widest uppercase text-gold font-medium">Santuario de Dunas Al Maha</span>
+                                <h3 class="font-serif text-2xl text-frostwhite mt-1 mb-3 group-hover:text-gold transition-colors">Campamento Real Bajo las Estrellas</h3>
+                                <p class="text-xs text-frostwhite/70 font-light line-clamp-2 mb-6">Alojamiento ultralujoso en tiendas beduinas climatizadas con piscina privada, astronomía privada y espectáculo cultural VIP.</p>
+                                <button onclick="openBookingModal('Campamento Real en Desierto')" class="w-full py-3 border border-gold/40 rounded-xl text-xs uppercase tracking-widest text-gold hover:bg-gold hover:text-midnight font-semibold transition-all">
+                                    Solicitar Disponibilidad
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-card rounded-2xl overflow-hidden gold-border-glow transition-all duration-500 group">
+                            <div class="aspect-[16/10] img-zoom-container relative">
+                                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1000&q=80" alt="Royal Penthouse" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-midnight/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold border border-gold/30">
+                                    Desde $25,000 / noche
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[10px] tracking-widest uppercase text-gold font-medium">Downtown Dubái Skyline</span>
+                                <h3 class="font-serif text-2xl text-frostwhite mt-1 mb-3 group-hover:text-gold transition-colors">Burj Crown Royal Suite & Penthouse</h3>
+                                <p class="text-xs text-frostwhite/70 font-light line-clamp-2 mb-6">Las vistas más cotizadas del Burj Khalifa y las fuentes de Dubái. Servicio de mayordomo las 24h y helipuerto directo.</p>
+                                <button onclick="openBookingModal('Burj Crown Royal Penthouse')" class="w-full py-3 border border-gold/40 rounded-xl text-xs uppercase tracking-widest text-gold hover:bg-gold hover:text-midnight font-semibold transition-all">
+                                    Solicitar Disponibilidad
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials VIP Section -->
+            <section class="py-20 bg-midnight-light/40 border-y border-gold/20">
+                <div class="max-w-5xl mx-auto px-4 text-center">
+                    <span class="text-gold font-serif text-sm tracking-[0.2em] uppercase">Testimonios de Elite</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal mt-2 mb-12">Lo Que Dicen Nuestros Distinguidos Huéspedes</h2>
+
+                    <div class="glass-panel p-8 sm:p-12 rounded-3xl relative gold-border-glow">
+                        <i class="fa-solid fa-quote-left text-4xl text-gold/30 absolute top-6 left-6"></i>
+                        <p class="font-serif text-xl sm:text-2xl text-frostwhite italic leading-relaxed mb-8">
+                            "Exótica Tours VIP redefinió por completo nuestras expectativas de viaje en Oriente Medio. La coordinación impecable de nuestro superyate en la Palma y el tour en helicóptero privado superaron cualquier nivel de lujo que hayamos experimentado antes."
+                        </p>
+                        <div class="flex items-center justify-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client VIP" class="w-14 h-14 rounded-full object-cover border-2 border-gold">
+                            <div class="text-left">
+                                <h4 class="font-serif text-lg text-gold font-semibold">Sir Richard Harrington</h4>
+                                <p class="text-xs text-softgray uppercase tracking-wider">Londres, Reino Unido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-destinations" class="page-section hidden">
+            <section class="py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Page Header -->
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase">Catálogo de Alta Gama</span>
+                        <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-2">Destinos & Travesías Exclusivas</h1>
+                        <p class="text-frostwhite/70 text-sm mt-4">Filtre nuestras experiencias diseñadas a medida en Dubái, Abu Dhabi y expediciones internacionales privadas.</p>
+                    </div>
+
+                    <!-- Category Filter Tabs -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="dest-filters">
+                        <button onclick="filterDestinations('all')" class="filter-btn active px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border border-gold bg-gold text-midnight font-bold transition-all">Todos</button>
+                        <button onclick="filterDestinations('dubai')" class="filter-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border border-gold/30 text-frostwhite hover:border-gold transition-all">Dubái Ultra-Lujo</button>
+                        <button onclick="filterDestinations('yacht')" class="filter-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border border-gold/30 text-frostwhite hover:border-gold transition-all">Superyacht Charter</button>
+                        <button onclick="filterDestinations('jet')" class="filter-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border border-gold/30 text-frostwhite hover:border-gold transition-all">Vuelos Privados & Jet</button>
+                        <button onclick="filterDestinations('abudhabi')" class="filter-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border border-gold/30 text-frostwhite hover:border-gold transition-all">Abu Dhabi & Reales</button>
+                    </div>
+
+                    <!-- Items Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="destinations-grid">
+                        <!-- Dynamic JavaScript cards render here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-accommodations" class="page-section hidden">
+            <section class="py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Page Header -->
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase">Hospitalidad de 7 Estrellas</span>
+                        <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-2">Suites, Penthouses & Villas Reales</h1>
+                        <p class="text-frostwhite/70 text-sm mt-4">Acceso prioritario a las propiedades más distinguidas del mundo con servicio de mayordomo dedicado las 24 horas.</p>
+                    </div>
+
+                    <!-- Luxury Suites Showcase -->
+                    <div class="space-y-16">
+                        <!-- Hotel Showcase Item 1 -->
+                        <div class="glass-card rounded-3xl overflow-hidden gold-border-glow grid grid-cols-1 lg:grid-cols-12">
+                            <div class="lg:col-span-7 relative min-h-[350px] img-zoom-container">
+                                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Burj Al Arab Royal Suite" class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 bg-midnight/90 border border-gold/40 px-4 py-1.5 rounded-full text-xs font-semibold text-gold">
+                                    Icono de Dubái • 7 Estrellas
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs text-gold uppercase tracking-widest font-semibold">Burj Al Arab Jumeirah</span>
+                                    <h3 class="font-serif text-3xl text-frostwhite mt-1 mb-4">Royal Two-Bedroom Suite</h3>
+                                    <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">
+                                        Acceso por ascensor privado, escaleras de mármol y oro de 24 kilates, cine privado, mayordomo personal 24/7 y traslado en Rolls-Royce Phantom.
+                                    </p>
+                                    
+                                    <!-- Amenities List -->
+                                    <div class="grid grid-cols-2 gap-3 text-xs text-softgray mb-8 border-y border-gold/20 py-4">
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Mayordomo 24/7</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Helipuerto Privado</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Spa en Suite Hermès</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Rolls-Royce Incluido</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between border-t border-gold/10 pt-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase text-softgray block">Precio Estimado</span>
+                                        <span class="font-serif text-2xl text-gold font-bold">$28,000 <span class="text-xs text-frostwhite/60 font-normal">/ noche</span></span>
+                                    </div>
+                                    <button onclick="openBookingModal('Burj Al Arab Royal Suite')" class="shimmer-btn text-midnight font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-widest">
+                                        Reservar Suite
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Showcase Item 2 -->
+                        <div class="glass-card rounded-3xl overflow-hidden gold-border-glow grid grid-cols-1 lg:grid-cols-12">
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between order-2 lg:order-1">
+                                <div>
+                                    <span class="text-xs text-gold uppercase tracking-widest font-semibold">Atlantis The Royal</span>
+                                    <h3 class="font-serif text-3xl text-frostwhite mt-1 mb-4">Royal Mansion Penthouse</h3>
+                                    <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">
+                                        El penthouse arquitectónico más exclusivo del mundo con terraza de 360 grados, piscina infinita flotante sobre Palm Jumeirah y chef privado Michelin.
+                                    </p>
+                                    
+                                    <!-- Amenities List -->
+                                    <div class="grid grid-cols-2 gap-3 text-xs text-softgray mb-8 border-y border-gold/20 py-4">
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Infinity Pool Privada</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Entrada VIP Privada</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Cava de Vinos Raros</div>
+                                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Elevador Exclusivo</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between border-t border-gold/10 pt-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase text-softgray block">Precio Estimado</span>
+                                        <span class="font-serif text-2xl text-gold font-bold">$45,000 <span class="text-xs text-frostwhite/60 font-normal">/ noche</span></span>
+                                    </div>
+                                    <button onclick="openBookingModal('Atlantis Royal Mansion Penthouse')" class="shimmer-btn text-midnight font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-widest">
+                                        Reservar Suite
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 relative min-h-[350px] img-zoom-container order-1 lg:order-2">
+                                <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Atlantis Royal Penthouse" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-midnight/90 border border-gold/40 px-4 py-1.5 rounded-full text-xs font-semibold text-gold">
+                                    The Palm Jumeirah
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-blog" class="page-section hidden">
+            <section class="py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Page Header -->
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase">Editorial Editorial VIP</span>
+                        <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-2">Insights & Tendencias de Lujo</h1>
+                        <p class="text-frostwhite/70 text-sm mt-4">Guías de estilo de vida, secretismo gastronómico y cultura de alta gama en el Golfo Pérsico.</p>
+                    </div>
+
+                    <!-- Blog Articles Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="blog-grid">
+                        <!-- Article 1 -->
+                        <article class="glass-card rounded-2xl overflow-hidden gold-border-glow flex flex-col justify-between group">
+                            <div>
+                                <div class="aspect-[16/10] img-zoom-container relative">
+                                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai Penthouses" class="w-full h-full object-cover">
+                                    <span class="absolute top-4 left-4 bg-gold text-midnight font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full">Estilo de Vida</span>
+                                </div>
+                                <div class="p-6">
+                                    <span class="text-[10px] text-softgray tracking-wider uppercase">5 Octubre, 2026 • 5 min lectura</span>
+                                    <h3 class="font-serif text-2xl text-frostwhite mt-2 mb-3 group-hover:text-gold transition-colors">Los 5 Penthouses más Privados y Exclusivos de Dubái</h3>
+                                    <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">
+                                        Un recorrido confidencial por las residencias de gran altura que prefieren las familias reales y ejecutivos globales.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-0">
+                                <button onclick="openBlogArticle(1)" class="text-gold hover:text-gold-light text-xs font-semibold tracking-widest uppercase flex items-center gap-2">
+                                    <span>Leer Artículo Completo</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="glass-card rounded-2xl overflow-hidden gold-border-glow flex flex-col justify-between group">
+                            <div>
+                                <div class="aspect-[16/10] img-zoom-container relative">
+                                    <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80" alt="Superyacht Dubai Marina" class="w-full h-full object-cover">
+                                    <span class="absolute top-4 left-4 bg-gold text-midnight font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full">Navegación VIP</span>
+                                </div>
+                                <div class="p-6">
+                                    <span class="text-[10px] text-softgray tracking-wider uppercase">28 Septiembre, 2026 • 7 min lectura</span>
+                                    <h3 class="font-serif text-2xl text-frostwhite mt-2 mb-3 group-hover:text-gold transition-colors">Guía Definitiva: Cómo Alquilar un Superyate en Marina Dubái</h3>
+                                    <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">
+                                        Todo sobre amarres privados, rutas hacia las islas del Golfo y catering Michelin personalizado para eventos corporativos de alto nivel.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-0">
+                                <button onclick="openBlogArticle(2)" class="text-gold hover:text-gold-light text-xs font-semibold tracking-widest uppercase flex items-center gap-2">
+                                    <span>Leer Artículo Completo</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Article 3 -->
+                        <article class="glass-card rounded-2xl overflow-hidden gold-border-glow flex flex-col justify-between group">
+                            <div>
+                                <div class="aspect-[16/10] img-zoom-container relative">
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Gastronomia Michelin" class="w-full h-full object-cover">
+                                    <span class="absolute top-4 left-4 bg-gold text-midnight font-bold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full">Gastronomía</span>
+                                </div>
+                                <div class="p-6">
+                                    <span class="text-[10px] text-softgray tracking-wider uppercase">15 Septiembre, 2026 • 4 min lectura</span>
+                                    <h3 class="font-serif text-2xl text-frostwhite mt-2 mb-3 group-hover:text-gold transition-colors">Experiencias Gastronómicas Michelin bajo las Estrellas</h3>
+                                    <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">
+                                        Cenas privadas concebidas por chefs galardonados directamente en el desierto o en terrazas helipuerto con vistas a la urbe.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-0">
+                                <button onclick="openBlogArticle(3)" class="text-gold hover:text-gold-light text-xs font-semibold tracking-widest uppercase flex items-center gap-2">
+                                    <span>Leer Artículo Completo</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-contact" class="page-section hidden">
+            <section class="py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Section Title -->
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-gold font-serif text-sm tracking-[0.25em] uppercase">Contacto Privado</span>
+                        <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-2">Atención & Concierge VIP</h1>
+                        <p class="text-frostwhite/70 text-sm mt-4">Nuestro equipo multilingüe en Dubái Marina está a su entera disposición las 24 horas del día.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                        <!-- Contact Form Panel -->
+                        <div class="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl gold-border-glow">
+                            <h2 class="font-serif text-2xl text-gold mb-6">Solicitar Travesía Personalizada</h2>
+                            <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-softgray mb-2">Nombre Completo *</label>
+                                        <input type="text" required placeholder="Ej. Lord Arthur Pendelton" class="w-full bg-midnight-dark/80 border border-gold/30 rounded-xl px-4 py-3 text-sm text-frostwhite focus:outline-none focus:border-gold transition-colors">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-softgray mb-2">Correo Electrónico *</label>
+                                        <input type="email" required placeholder="ejemplo@privatefamily.com" class="w-full bg-midnight-dark/80 border border-gold/30 rounded-xl px-4 py-3 text-sm text-frostwhite focus:outline-none focus:border-gold transition-colors">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-softgray mb-2">Teléfono / WhatsApp *</label>
+                                        <input type="tel" required placeholder="+971 50 000 0000" class="w-full bg-midnight-dark/80 border border-gold/30 rounded-xl px-4 py-3 text-sm text-frostwhite focus:outline-none focus:border-gold transition-colors">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-softgray mb-2">Presupuesto Estimado (USD)</label>
+                                        <select class="w-full bg-midnight-dark/80 border border-gold/30 rounded-xl px-4 py-3 text-sm text-frostwhite focus:outline-none focus:border-gold transition-colors">
+                                            <option value="10k">$10,000 - $25,000</option>
+                                            <option value="50k">$25,000 - $100,000</option>
+                                            <option value="100k+">$100,000+ (Royal Standard)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-softgray mb-2">Requerimientos Especiales / Itinerario deseado</label>
+                                    <textarea rows="4" placeholder="Describa sus fechas, preferencias de transfer privado, chefs o protocolos especiales..." class="w-full bg-midnight-dark/80 border border-gold/30 rounded-xl px-4 py-3 text-sm text-frostwhite focus:outline-none focus:border-gold transition-colors"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full shimmer-btn text-midnight font-bold py-4 rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Enviar Solicitud Confidencial</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Direct Contacts & Office Map Placeholder -->
+                        <div class="lg:col-span-5 space-y-8">
+                            <div class="glass-panel p-8 rounded-3xl gold-border-glow space-y-6">
+                                <h3 class="font-serif text-2xl text-gold border-b border-gold/20 pb-4">Oficina Principal Dubái</h3>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs uppercase text-softgray">Dirección</h4>
+                                        <p class="text-sm font-medium text-frostwhite mt-1">Level 42, Marina Plaza Tower, Dubái Marina, Emiratos Árabes Unidos</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs uppercase text-softgray">Atención Directa 24/7</h4>
+                                        <p class="text-sm font-medium text-frostwhite mt-1">+971 4 800 EXOTICA (396842)</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs uppercase text-softgray">Email VIP</h4>
+                                        <p class="text-sm font-medium text-frostwhite mt-1">concierge@exoticatoursvip.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Direct WhatsApp Fast Button -->
+                            <a href="https://wa.me/971500000000?text=Hola,%20deseo%20solicitar%20información%20para%20un%20viaje%20VIP%20a%20Dubái" target="_blank" class="glass-panel p-6 rounded-2xl gold-border-glow flex items-center justify-between group hover:border-emerald-500/50 transition-all">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-frostwhite group-hover:text-emerald-400 transition-colors">Atención Inmediata por WhatsApp</h4>
+                                        <p class="text-xs text-softgray">Respuesta prioritaria en menos de 5 minutos.</p>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gold group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Floating WhatsApp Concierge Button -->
+    <a href="https://wa.me/971500000000?text=Hola,%20quisiera%20consultar%20por%20sus%20servicios%20VIP" target="_blank" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-emerald-600 to-teal-500 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 hover:scale-110 transition-transform duration-300 border border-emerald-300/40">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline font-sans text-xs uppercase font-bold tracking-wider">Concierge VIP</span>
+    </a>
+
+    <!-- Booking Modal Dynamic -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-midnight-dark/90 backdrop-blur-md p-4">
+        <div class="glass-panel max-w-lg w-full rounded-3xl p-8 gold-border-glow relative animate-fadeIn">
+            <button onclick="closeModal('booking-modal')" class="absolute top-4 right-4 text-softgray hover:text-gold text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <span class="font-script text-3xl text-gold">Exótica Tours VIP</span>
+                <h3 class="font-serif text-2xl text-frostwhite mt-1" id="modal-title">Reservar Experiencia</h3>
+                <p class="text-xs text-softgray mt-1">Su gestor personal confirmará disponibilidad en breves minutos.</p>
+            </div>
+
+            <form onsubmit="handleModalBooking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase text-softgray mb-1">Nombre Completo</label>
+                    <input type="text" required class="w-full bg-midnight/90 border border-gold/30 rounded-xl px-4 py-2.5 text-sm text-frostwhite focus:outline-none focus:border-gold">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-softgray mb-1">WhatsApp / Teléfono Internacional</label>
+                    <input type="tel" required class="w-full bg-midnight/90 border border-gold/30 rounded-xl px-4 py-2.5 text-sm text-frostwhite focus:outline-none focus:border-gold">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-softgray mb-1">Fecha Estimada</label>
+                    <input type="date" required class="w-full bg-midnight/90 border border-gold/30 rounded-xl px-4 py-2.5 text-sm text-frostwhite focus:outline-none focus:border-gold">
+                </div>
+                <button type="submit" class="w-full shimmer-btn text-midnight font-bold py-3 rounded-xl text-xs uppercase tracking-widest mt-2">
+                    Confirmar Pre-Reserva
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 glass-panel border border-gold/50 px-6 py-4 rounded-2xl hidden shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold text-xl"></i>
+        <span class="text-xs text-frostwhite font-medium" id="toast-msg">Solicitud procesada con éxito.</span>
+    </div>
+
+    <footer class="bg-midnight-dark border-t border-gold/20 pt-16 pb-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="font-script text-3xl text-gold">Exótica</span>
+                        <span class="font-serif text-xs tracking-widest text-frostwhite uppercase">Tours VIP</span>
+                    </div>
+                    <p class="text-xs text-softgray leading-relaxed max-w-md">
+                        Agencia de viajes ultra-exclusiva especializada en experiencias a medida, chárter de yates, jets privados y hospitalidad de 7 estrellas en Emiratos Árabes Unidos.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-serif text-gold text-sm uppercase tracking-widest mb-4">Secciones</h4>
+                    <ul class="space-y-2 text-xs text-softgray">
+                        <li><a href="#" onclick="switchTab('home')" class="hover:text-gold transition-colors">Inicio</a></li>
+                        <li><a href="#" onclick="switchTab('destinations')" class="hover:text-gold transition-colors">Experiencias Dubái</a></li>
+                        <li><a href="#" onclick="switchTab('accommodations')" class="hover:text-gold transition-colors">Suites & Penthouses</a></li>
+                        <li><a href="#" onclick="switchTab('blog')" class="hover:text-gold transition-colors">Blog Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Socials -->
+                <div>
+                    <h4 class="font-serif text-gold text-sm uppercase tracking-widest mb-4">Síganos</h4>
+                    <div class="flex items-center space-x-4 text-gold text-lg mb-4">
+                        <a href="#" class="hover:text-gold-light"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-gold-light"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-light"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-[10px] text-softgray">© 2026 Exótica Tours VIP. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Store for Experiences
+        const experiencesData = [
+            {
+                id: 1,
+                title: "Vuelo Privado en Helicóptero Atlantis & Burj",
+                category: "jet",
+                location: "Dubái Skyline",
+                price: "$1,800 USD",
+                image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80",
+                desc: "Sobrevuele The World Islands, Palm Jumeirah y la aguja del Burj Khalifa a bordo de nuestro helicóptero VIP con champán ilimitado."
+            },
+            {
+                id: 2,
+                title: "Superyate Majestic 120ft con Chef Michelin",
+                category: "yacht",
+                location: "Dubái Marina Harbor",
+                price: "$18,500 USD / día",
+                image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
+                desc: "Travesía por la costa arábiga en un yate de 120 pies provisto de jacuzzi en cubierta, motos de agua y servicio de tripulación real."
+            },
+            {
+                id: 3,
+                title: "Expedición Safari Real en Bentley Vintage",
+                category: "dubai",
+                location: "Reserva de Conservación del Desierto",
+                price: "$4,200 USD",
+                image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
+                desc: "Recorrido por las dunas doradas en vehículos clásicos de colección seguido de una velada gastronómica privada de 6 tiempos."
+            },
+            {
+                id: 4,
+                title: "Abu Dhabi Louvre & Palacio Qasr Al Watan VIP",
+                category: "abudhabi",
+                location: "Abu Dhabi",
+                price: "$6,500 USD",
+                image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=800&q=80",
+                desc: "Traslado en limusina blindada, guía historiador personal y acceso exclusivo a las galerías cerradas del Palacio Presidential."
+            },
+            {
+                id: 5,
+                title: "Private Jet Charter: Dubái a Maldivas",
+                category: "jet",
+                location: "Terminal VIP Al Maktoum",
+                price: "$35,000 USD",
+                image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+                desc: "Vuelo charter privado directo en Gulfstream G650 hacia su sobretodo de agua privado en atolones maldivos."
+            },
+            {
+                id: 6,
+                title: "Cena Privada en Acuario Atlantis",
+                category: "dubai",
+                location: "Atlantis The Palm",
+                price: "$7,800 USD",
+                image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+                desc: "Cierre total de la cúpula marina para una cena romántica o familiar rodeado de fauna marina exótica."
+            }
+        ];
+
+        // SPA Navigation Logic
+        function switchTab(tabId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show active page
+            const activePage = document.getElementById(`page-${tabId}`);
+            if(activePage) activePage.classList.remove('hidden');
+
+            // Update nav button states
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-gold');
+                btn.classList.add('text-frostwhite/80');
+            });
+            const currentNav = document.getElementById(`nav-${tabId}`);
+            if(currentNav) {
+                currentNav.classList.add('text-gold');
+                currentNav.classList.remove('text-frostwhite/80');
+            }
+
+            // Scroll smoothly to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // If switching to destinations, load data
+            if(tabId === 'destinations') {
+                renderDestinations('all');
+            }
+        }
+
+        // Render Destinations Grid
+        function renderDestinations(category) {
+            const grid = document.getElementById('destinations-grid');
+            if(!grid) return;
+
+            const filtered = category === 'all' 
+                ? experiencesData 
+                : experiencesData.filter(item => item.category === category);
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="glass-card rounded-2xl overflow-hidden gold-border-glow transition-all duration-500 flex flex-col justify-between group">
+                    <div>
+                        <div class="aspect-[16/10] img-zoom-container relative">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-midnight/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold border border-gold/30">
+                                ${item.price}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] tracking-widest uppercase text-gold font-medium"><i class="fa-solid fa-location-dot mr-1"></i>${item.location}</span>
+                            <h3 class="font-serif text-2xl text-frostwhite mt-1 mb-3 group-hover:text-gold transition-colors">${item.title}</h3>
+                            <p class="text-xs text-frostwhite/70 font-light leading-relaxed mb-6">${item.desc}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0">
+                        <button onclick="openBookingModal('${item.title}')" class="w-full py-3 border border-gold/40 rounded-xl text-xs uppercase tracking-widest text-gold hover:bg-gold hover:text-midnight font-semibold transition-all">
+                            Reservar Concierge
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Buttons Dynamic CSS
+        function filterDestinations(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-midnight', 'font-bold');
+                btn.classList.add('text-frostwhite');
+            });
+            event.target.classList.add('bg-gold', 'text-midnight', 'font-bold');
+            renderDestinations(category);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('hidden');
+        }
+
+        // Modal Controls
+        function openBookingModal(title) {
+            const modal = document.getElementById('booking-modal');
+            const modalTitle = document.getElementById('modal-title');
+            if(modalTitle) modalTitle.innerText = title;
+            if(modal) modal.classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if(modal) modal.classList.add('hidden');
+        }
+
+        // Form Handlers
+        function handleQuickSearch(e) {
+            e.preventDefault();
+            switchTab('destinations');
+            showToast("Buscando travesías disponibles para sus fechas...");
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Solicitud recibida. Un gestor VIP le contactará en breve.");
+            e.target.reset();
+        }
+
+        function handleModalBooking(e) {
+            e.preventDefault();
+            closeModal('booking-modal');
+            showToast("Pre-reserva registrada. Nuestro Concierge le llamará hoy.");
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            if(toastMsg) toastMsg.innerText = msg;
+            if(toast) {
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 4000);
+            }
+        }
+
+        function openBlogArticle(id) {
+            openBookingModal("Lectura Editorial VIP #" + id);
+        }
+
+        // On initial load
+        window.onload = function() {
+            renderDestinations('all');
+        }
+    </script>
+</body>
+</html>
